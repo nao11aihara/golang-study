@@ -5,4 +5,4 @@ services:
     build: .
     tty: true
     volumes:
-      - ./app:/go/src/app
+      - .:/go/src/app
