@@ -26,25 +26,31 @@ docker image build -t sampleImage:latest .
 // ポート8000とDocker上のポート8000を繋げる
 // -dをつけるとバックグラウンドで起動する
 docker container run -p 8000:8000 --name sampleContainer sampleImage:latest -d
+docker run -p 8000:8000 --name sampleContainer sampleImage:latest -d
 
 // コンテナの起動状態を確認
 //
 // -aをつけると停止しているものも含めて表示する
 docker container ls -a
+docker ps -a
 
 // コンテナ停止
 docker container stop sampleContainer
+docker stop sampleContainer
 
 // コンテナ削除
 docker container rm sampleContainer
+docker rm sampleContainer
 
 // ログ確認
 docker container logs sampleContainer
+docker logs sampleContainer
 
 // 実行中のコンテナで別のコマンドを使う
 //
 // 実行中のコンテナのGoのバージョンを確認
 docker container exec sampleContainer go version
+docker exec sampleContainer go version
 
 // 使用していないイメージ、コンテナを削除
 docker system prune -a
