@@ -14,6 +14,9 @@ docker image ls
 // タグ名: latest
 // . 今いるディレクトリのDockerfileを参照する
 docker image build -t sampleImage:latest .
+
+// イメージ削除
+docker image rm sampleImage:latest
 ```
 
 ### Docker コンテナ
